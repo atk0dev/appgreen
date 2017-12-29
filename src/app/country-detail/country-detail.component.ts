@@ -39,7 +39,7 @@ export class CountryDetailComponent implements OnInit {
   operation: string;
 
   constructor(private route: ActivatedRoute,
-              private router: Router, 
+              private router: Router,
               private dataService: AppDataService) { }
 
   createCountry(country: Country) {
@@ -69,5 +69,4 @@ export class CountryDetailComponent implements OnInit {
       err => this.errorMessage = 'Error updating country'
       );
   }
-
 }

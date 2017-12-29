@@ -11,7 +11,7 @@ import { SignInComponent } from '../fw/users/sign-in/sign-in.component';
 import { RegisterUserComponent } from '../fw/users/register-user/register-user.component';
 import { AuthGuard } from './services/auth-guard.service';
 
-export const appRoutes: Routes = [  
+export const appRoutes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'register', component: RegisterUserComponent },
   { path: 'authenticated', component: AuthenticatedUserComponent, canActivate: [AuthGuard],

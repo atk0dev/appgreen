@@ -11,23 +11,23 @@ import { FieldDefinition } from '../field-definition';
   styleUrls: ['./dynamic-form.component.css']
 })
 export class DynamicFormComponent implements OnChanges, OnInit {
- 
+
   @Input() vm: any;
   @Input() vmDefinition: Array<FieldDefinition>;
   @Input() operation: string;
   @Input() errorMessage: string;
   @Output() update: EventEmitter<any> = new EventEmitter();
   @Output() create: EventEmitter<any> = new EventEmitter();
-  
+
   form: FormGroup;
   status: string;
   submitted = false;
   vmCopy: any;
-  
+
   constructor(private router: Router,
               private route: ActivatedRoute,
               private location: Location) { }
-  
+
   clearForm() {
     let group = {};
     this.vmCopy = Object.assign({}, this.vm);
@@ -46,7 +46,7 @@ export class DynamicFormComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     this.clearForm();
-    
+
     this.route.params.subscribe(params => {
       this.operation = params['operation'];
       this.clearForm();
